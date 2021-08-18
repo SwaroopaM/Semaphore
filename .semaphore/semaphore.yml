@@ -31,9 +31,6 @@ blocks:
         - name: Unit tests
           commands:
             - mvn test
-        - name: Integration tests
-          commands:
-            - mvn test -Pintegration-testing
   - name: Performance tests
     task:
       env_vars:
