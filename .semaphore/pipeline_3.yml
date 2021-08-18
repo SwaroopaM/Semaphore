@@ -16,8 +16,9 @@ blocks:
         - name: dockerhub
         - name: production-db-auth
         - name: production-k8s-auth
+        - name: AWS
       prologue:
         commands:
-          - '- checkout'
-          - '- sudo pip install awscli'
-          - '- aws eks get-token --cluster-name=semaphore-cluster '
+          - checkout
+          - sudo pip install awscli
+          - 'aws eks get-token --cluster-name=semaphore-cluster '
