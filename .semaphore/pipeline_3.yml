@@ -5,7 +5,7 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: 'Block #1'
+  - name: Deploy
     task:
       jobs:
         - name: Deploy
@@ -16,3 +16,8 @@ blocks:
         - name: dockerhub
         - name: production-db-auth
         - name: production-k8s-auth
+      prologue:
+        commands:
+          - '- checkout'
+          - '- sudo pip install awscli'
+          - '- aws eks get-token --cluster-name=semaphore-cluster '
